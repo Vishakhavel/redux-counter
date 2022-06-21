@@ -1,5 +1,6 @@
 import { initial } from 'lodash'
 import { createStore } from 'redux'
+// import { createSlice } from '@reduxjs/toolkit'
 // create a store
 // create a reducer
 const initialState = { counter: 0, showCounter: true }
