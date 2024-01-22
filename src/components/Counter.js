@@ -1,27 +1,11 @@
+import React from 'react'
 import classes from './Counter.module.css'
 import { useSelector, useDispatch } from 'react-redux'
+
 const Counter = () => {
+// 5. select required pieces of state.
 
-  const counter = useSelector((state) => state.counter)
-
-  const show = useSelector((state) => state.showCounter)
-
-  const dispatch = useDispatch()
-
-  const incrementHandler = () => {
-    dispatch({ type: 'INC' })
-  }
-  const incrementByFiveHandler = () => {
-    dispatch({ type: 'INC5', payload: 5 })
-  }
-
-  const decerementHandler = () => {
-    dispatch({ type: 'DEC' })
-  }
-
-  const toggleCounterHandler = () => {
-    dispatch({ type: 'TOGGLE' })
-  }
+// 6. dispatch actions to modify state.
 
   return (
     <main className={classes.counter}>
@@ -33,9 +17,7 @@ const Counter = () => {
         <button onClick={incrementByFiveHandler}>+5</button>
         <button onClick={decerementHandler}>-</button>
       </div>
-      <button onClick={toggleCounterHandler}>
-        {show ? 'Hide' : 'Show'}
-      </button>
+      <button onClick={toggleCounterHandler}>{show ? 'Hide' : 'Show'}</button>
     </main>
   )
 }

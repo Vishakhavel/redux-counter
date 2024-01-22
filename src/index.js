@@ -1,15 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+// NOTE: Provider is imported from react-redux, NOT redux
 import { Provider } from 'react-redux'
-// NOTE: provider is imported from react-redux, NOT redux
 
 import './index.css'
 import App from './App'
-import store from './store/index'
+import store from './store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  // 4. provide the state to the component.
+ <App />
 )
