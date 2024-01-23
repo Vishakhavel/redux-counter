@@ -10,5 +10,8 @@ import store from './store'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   // 4. provide the state to the component.
- <App />
+  <Provider store={store}>
+    <App />
+  </Provider>
+//  <App />
 )

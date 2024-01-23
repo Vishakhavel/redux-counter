@@ -3,9 +3,27 @@ import classes from './Counter.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 
 const Counter = () => {
-// 5. select required pieces of state.
+// 5. consumer the state -> select required pieces of state.
+const counter = useSelector((state) => state.counter)
+const show = useSelector((state) => state.showCounter)
 
-// 6. dispatch actions to modify state.
+// 6. modify the state -> dispatch actions to modify state.
+const dispatch = useDispatch()
+
+  const incrementHandler = () => {
+    dispatch({ type: 'INC' })
+  }
+  const incrementByFiveHandler = () => {
+    dispatch({ type: 'INC5' })
+  }
+
+  const decerementHandler = () => {
+    dispatch({ type: 'DEC' })
+  }
+
+  const toggleCounterHandler = () => {
+    dispatch({ type: 'TOGGLE' })
+  }
 
   return (
     <main className={classes.counter}>
